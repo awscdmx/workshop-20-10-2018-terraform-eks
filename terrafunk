@@ -1,0 +1,8 @@
+#/bin/bash
+rm -rf build/*.tf
+mkdir -p build
+cp -rf src/* build/
+cd .terrafunk
+python3 build.py
+cd ../build
+terraform $@

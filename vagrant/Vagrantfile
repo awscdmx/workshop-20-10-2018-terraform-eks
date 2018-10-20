@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+
+  config.vm.synced_folder "../", "/home/app"
+
+  config.vm.provision "shell" do |s|
+    s.inline = "apt-get update && apt-get install -y build-essential libssl-dev libffi-dev python-dev libbz2-dev unzip"
+  end
+
+  config.vm.provision "shell", path: "script-terraform-install.sh", privileged: true
+
+end
