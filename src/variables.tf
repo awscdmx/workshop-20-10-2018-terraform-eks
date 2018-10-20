@@ -20,6 +20,9 @@ variable "vpc_network_name" {
 variable "eks_cluster_name" {
   description = "EKS Cluster name"
 }
+variable "eks_cluster_ingress" {
+  description = "Workstation that can talk with the EKS Master."
+}
 variable "vpc_cidr_block" {}
 variable "vpc_subnet_cidr_block" {}
 variable "pritunl_server_aws_key_pair_name" {}

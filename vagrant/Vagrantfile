@@ -8,5 +8,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", path: "script-terraform-install.sh", privileged: true
+  config.vm.provision "shell", path: "script-eks-kubectl-install.sh", privileged: true
 
 end
